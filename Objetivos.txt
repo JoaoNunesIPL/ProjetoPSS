@@ -1,0 +1,79 @@
+1x ou mais: Single Board Computer (SBC) no CPT (Cisco Packet Tracer):
+	- Deve estar conectado a uma rede local (cabo ou Wi-Fi);
+	- Deve interligar sensores e/ou atuadores;
+	- Código em Python CPT para controlo de sensores, atuadores, para enviar e receber comunicações HTTP;
+
+1x ou mais: Microcontrolador (MCU) no CPT
+	- Deve estar conectado a uma rede local (cabo ou Wi-Fi);
+	- Deve interligar sensores e/ou atuadores;	
+	- Código em Python CPT para controlo de sensores, atuadores, para enviar e receber comunicações HTTP;
+
+1x ou mais: Switch no CPT 
+	- Interligar equipamentos via cabo;
+
+1x ou mais: Access Point (ou similar) no CPT
+	- Interligar equipamentos via Wi-Fi;
+	- As configurações da rede devem ser seguras;
+
+6x ou mais: Sensores no CPT
+	- Recolher dados do ambiente (Environment);
+	- Dados recolhidos devem ser SEMPRE enviados para o serviço web, disponibilizando o valor atual na página Web;
+
+6x ou mais: Atuadores no CPT
+	- Fazer atuar os atuadores;
+	- Os estados dos atuadores devem ser SEMPRE enviados para o serviço web, disponibilizando o estado atual na página Web;
+
+1x ou mais webcam real
+	- Deve ser utilizada para tirar fotografias e enviá-las para o serviço web, disponibilizando a última fotografia na página Web;
+	- Pode ser utilizada para outras funcionalidades opcionais;
+
+1 Website em HTML e PHP
+	- Desenvolver um website em HTML e PHP para mostrar o estado dos 6 sensores e dos 6 atuadores e que inclua:
+ 		* API para recolha e envio de informações;
+ 		* Página de histórico para cada sensores/atuadores;
+ 	- Código HTML e PHP deve incluir o comprovativo de verificação de erros no código de acordo com a especificação de ambos os standards;
+
+
+
+Eventos no código Python 	Ações nos atuadores do CPT;
+Eventos no código Python 	Alterações dos conteúdos na página web;
+Eventos no CPT 			Alterações dos conteúdos na página web;
+Eventos no CPT 			Ações através do código Python (ex: webcam e/ou áudio);
+
+
+
+1) Altere a API desenvolvida nas aulas de modo a que:
+
+a) seja realizada a autenticação de cada pedido HTTP, com uma senha/token de
+autenticação cujo valor é igual ao resultado do algoritmo de hashing MD5 da frase
+"ProjetoCRI".
+
+b) Todas as senhas/token inválidas devem devolver um HTTP status_code com um número
+de erro apropriado.
+
+c) Implemente um registo de log na API, de forma a guardar num ficheiro
+"http_errors.log" os pedidos HTTP que devolveram um HTTP status_code diferente de 200.
+Tenha em atenção as indicações seguintes:
+		- Cada linha do ficheiro "http_errors.log", representa um pedido HTTP status_code com
+	erro, conforme a sintaxe abaixo:
+	tipo_metodo_HTTP ; dados_no_pedido ; data_hora
+		Exemplo de get: GET;temperatura;2022/07/21 14:30
+		Exemplo de post: POST;temperatura;35.5;2022/07/21 14:30
+	
+		- Sugere-se que se utilize a estrutura de ficheiros idêntica à usada no projeto (crie uma
+	diretoria http_logs para armazenar o ficheiro de log).
+	
+	NOTA1: calcule o hash aqui: https://md5calc.com/hash
+	NOTA2: não confundir com a autenticação na dashboard (login.php)
+	
+	Exemplo de um pedido HTTP com método GET: get(nome, token);
+	Exemplo de um pedido HTTP com método POST: post(nome, datahora, valor, token);
+
+2) A página web inicial (index.php) deverá pedir um login e password que irá permitir entrar na
+página de visualização dos 6 sensores, 6 atuadores e do link ao historial.
+
+3) O vosso relatório deverá ter uma parte de pesquisa (PS) sobre o método Let´s Encrypt que
+permite instalar num determinado domínio um certificado digital gratuito, com validade de 3
+meses. Por exemplo, se tivessem comprado o domínio www.aminhapagina_iot.pt, para colocar
+em funcionamento o vosso servidor web, como poderiam abrir a vossa página web com o
+protocolo https?
