@@ -1,57 +1,49 @@
-<?php
-session_start();
-
-$username="joao";
-$password="1234";
-
-if (isset($_POST['username']) && isset($_POST['password']))
-    if($username == $_POST['username'] && $password == $_POST['password']){
-        echo("O username submetido foi: ".$_POST['username']."<br>");
-        echo("O password submetido foi: ".$_POST['password']."<br>");
-    $_SESSION['username']=$_POST['username'];
-    header('location: https://www.youtube.com/watch?v=k-UvIuFDRKc');
-    }
-    else{
-        echo("Autenticação FALHADA");
-    }
+<?php 
+   session_start(); /* Starts the session */
+        
+   /* Check Login form submitted */        
+   if(isset($_POST['Submit'])){
+      /* Define username and associated password array */
+      $logins = array('joao' => 'joao', 'pedro' => 'pedro');
+      
+      /* Check and assign submitted Username and Password to new variable */
+      $Username = isset($_POST['Username']) ? $_POST['Username'] : 'Sauce';
+      $Password = isset($_POST['Password']) ? $_POST['Password'] : 'man';
+      
+      /* Check Username and Password existence in defined array */            
+      if (isset($logins[$Username]) && $logins[$Username] == $Password){
+         /* Success: Set session variables and redirect to Protected page  */
+         $_SESSION['UserData']['Username']=$logins[$Username];
+         header("location:index.php");
+         exit;
+      } else {
+         /*Unsuccessful attempt: Set error message */
+         $msg="<span style='color:red'>Invalid Login Details</span>";
+      }
+   }
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-  <link rel="stylesheet" href="./Style/styleLOGIN.css">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-</head>
-
-<body>
-
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
-
-    <!-- Icon -->
-    <div class="fadeIn first">
-      <img src="./bee.jpg" id="icon" alt="User Icon" />
-    </div>
-
-    <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-    </form>
-
-    <!-- Voltar a pagina inicial -->
-    <div id="formFooter">
-      <a class="underlineHover" href="../index.html">Pagina inicial</a>
-    </div>
-
-  </div>
-</div>
-
-</body>
-</html> 
+<form action="" method="post" name="Login_Form">
+  <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
+    <?php if(isset($msg)){?>
+    <tr>
+      <td colspan="2" align="center" valign="top"><?php echo $msg;?></td>
+    </tr>
+    <?php } ?>
+    <tr>
+      <td colspan="2" align="left" valign="top"><h3>Login</h3></td>
+    </tr>
+    <tr>
+      <td align="right" valign="top">Username</td>
+      <td><input name="Username" type="text" class="Input"></td>
+    </tr>
+    <tr>
+      <td align="right">Password</td>
+      <td><input name="Password" type="password" class="Input"></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><input name="Submit" type="submit" value="Login" class="Button3"></td>
+    </tr>
+  </table>
+</form>
