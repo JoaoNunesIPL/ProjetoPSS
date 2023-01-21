@@ -1,0 +1,6 @@
+air cooler - refrescar caso quente
+heating element - aquecer caso frio
+speaker - avisos periódicos como está a apicultura
+LED - várias utilizações (avisos/luz artificial/etc)
+alarm - alarme puta
+LCD - dados de como está a apicultura

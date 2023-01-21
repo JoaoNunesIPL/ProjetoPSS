@@ -1,0 +1,8 @@
+photo sensor - luz
+smoke sensor - fumo
+motion sensor - ver se as abelhas estão a funcminar/ver movimento do lado de fora da base das abelhudas
+humidity sensor - humidades aceitaveis
+temperature sensor - temperatura
+water sensor - detedar se encontra agua dentro das bases das abelhudas
+
+

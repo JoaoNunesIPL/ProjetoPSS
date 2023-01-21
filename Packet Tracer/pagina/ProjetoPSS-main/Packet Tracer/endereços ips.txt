@@ -1,0 +1,17 @@
+rede - 192.168.1.0/24
+
+painel solar - static - 192.168.1.100
+bateria - static - 192.168.1.110
+monitor de temperatura - 192.168.1.120
+monitor de humidade - 192.168.1.121
+Camara de deteção de movimento - static - 192.168.1.125
+
+
+Porta - DHCP - 192.168.1.101
+MCU - DHCP - 192.168.1.100
+SBC - DHCP - 192.168.1.102
+
+homerouter - 192.168.1.1
+IoT server - 192.168.1.2
+
+DefaultGateway - 192.168.1.1
