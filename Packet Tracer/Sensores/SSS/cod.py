@@ -7,7 +7,7 @@ http = RealHTTPClient()
 
 def lerSSS(slot):
     
-    smoke = analogRead(slot) / 256
+    smoke = round(analogRead(slot)*200/1023-100,2)
     
     return smoke
 
