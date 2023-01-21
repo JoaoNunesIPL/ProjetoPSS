@@ -23,13 +23,11 @@
     <br>
     <h2>Alarme:</h2>
     <h3>bananas do alarme</h3>
-    <img src="alarm-off.png" height="50" width="50">
     <br>
     <h2>LED:</h2>
     <img src="led-off.png" height="50" width="50">
     <br>
     <h2>Altifalantes</h2>
-    <img src="speaker-off.png" height="50" width="50">
     
 
     <ul>
