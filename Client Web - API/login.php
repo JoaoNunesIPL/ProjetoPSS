@@ -4,12 +4,18 @@
    /* Check Login form submitted */        
    if(isset($_POST['Submit'])){
       /* Define username and associated password array */
-      $logins = array('joao' => 'joao', 'pedro' => 'pedro');
-      
+      //$logins = json_decode(file_get_contents('./data/logins.json'), true);
+      $logins = array(
+        'dccd96c256bc7dd39bae41a405f25e43' => 'dccd96c256bc7dd39bae41a405f25e43', 
+        'c6cc8094c2dc07b700ffcc36d64e2138' => 'c6cc8094c2dc07b700ffcc36d64e2138',
+        'a7ce0692519347d641e6834848b08a38' => 'a7ce0692519347d641e6834848b08a38'
+      );
+
       /* Check and assign submitted Username and Password to new variable */
-      $Username = isset($_POST['Username']) ? $_POST['Username'] : 'Sauce';
-      $Password = isset($_POST['Password']) ? $_POST['Password'] : 'man';
+      $Username = md5(isset($_POST['Username']) ? $_POST['Username'] : '');
+      $Password = md5(isset($_POST['Password']) ? $_POST['Password'] : '');
       
+
       /* Check Username and Password existence in defined array */            
       if (isset($logins[$Username]) && $logins[$Username] == $Password){
          /* Success: Set session variables and redirect to Protected page  */
