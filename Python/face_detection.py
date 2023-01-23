@@ -22,7 +22,7 @@ def crop_faces():
         
         # Termina com ESC pressionado
         k = cv2.waitKey(30) & 0xff
-        if(k == ESC):
+        if(k != ESC):
             break
 
     # recorta a cara na imagem -> roi (Region Of Interest) ***

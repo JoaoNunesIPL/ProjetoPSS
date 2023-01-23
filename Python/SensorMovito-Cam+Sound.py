@@ -1,4 +1,5 @@
 import cv2, time, requests, pygame
+from face_detection import crop_faces
 
 def play_sound(file):
     pygame.mixer.init()
@@ -8,13 +9,18 @@ def play_sound(file):
 
 def env_img():
     url= "http://localhost/API/upload.php"
-    files = {'imagem': open('imagem.jpg', 'rb')}
+    files = {'imagem': open(t, 'rb')}
 
     r = requests.post(url, files=files)
     print("Post efetuado #",r.status_code)
 
 try:
     while True:
+        
+        named_tuple = time.localtime()
+
+        t = time.strftime("./db/%d-%m-%Y_%H+%M+%S.jpg", named_tuple)
+        print(t)
 
         r=requests.get("http://localhost/API/api.php?nome=MSS")
         
@@ -24,7 +30,11 @@ try:
                 camera = cv2.VideoCapture(0)
                 ret, image = camera.read()
 
-                cv2.imwrite('imagem.jpg', image)
+                roi = crop_faces()
+
+                cv2.imwrite(t, roi)
+
+
 
                 camera.release()
                 cv2.destroyAllWindows()

@@ -8,8 +8,11 @@
             print_r($_FILES['imagem']['size']);
             print_r($_FILES['imagem']['type']);*/
         
-            $target_dir = "photos/";
-            $target_file = $target_dir . 'webcam.jpg';//basename($_FILES["imagem"]["name"]);
+            $target_dir = "../db/photos/";
+            
+            $dt = new DateTime("now", new DateTimeZone('Europe/Lisbon'));
+
+            $target_file = $target_dir . basename($_FILES["imagem"]["name"]);//'webcam.jpg';//basename($_FILES["imagem"]["name"]);
             $uploadOk = 1;
             $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             
