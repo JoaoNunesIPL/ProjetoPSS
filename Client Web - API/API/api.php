@@ -13,7 +13,6 @@
 			file_put_contents ("../db/".$_POST["nome"]."/hora.txt", $_POST["hora"]);
 
 			file_put_contents ("../db/".$_POST["nome"]."/log.txt", $_POST["hora"].";".$_POST["valor"] .PHP_EOL, FILE_APPEND);
-
 			}
 		else {
 			http_response_code(403);
@@ -22,15 +21,17 @@
 			exit();	
 			}
 		}
-	else if ($_SERVER["REQUEST_METHOD"] == "GET") {
-		if (isset($_GET["nome"])){
-			//$homepage = file_get_contents('../db/'.$_GET["nome"].'/valor.txt');
-			//echo $homepage;
-				
+		else if ($_SERVER["REQUEST_METHOD"] == "GET") {
+			if (isset($_GET["nome"])){
+				$homepage = file_get_contents('../db/'.$_GET["nome"].'/valor.txt');
+				echo $homepage;
+					
 			}
-		else{
-			http_response_code(404);
+			else{
+				http_response_code(404);
+				/*echo "Recebido um Get!\n";
+				echo "Não consegui puxar nada tho.";*/
+				}
 			}
-		}
 
 ?>
