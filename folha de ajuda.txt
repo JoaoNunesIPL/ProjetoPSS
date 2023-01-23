@@ -1,0 +1,10 @@
+sensor de temperatura :
+caso mais de 20 graus- apitar e ativar o elemento de arrefecimento
+caso menos de 10 graus- apitar e ativar o elemento de aquecimento
+
+camara de vigilancia:
+caso detete movimento- tirar fotografia
+
+sensor de humidade:
+caso fique acima de 70% - apitar e ativar o led 
+caso fique abaixo de 10% - apitar e ativar o led

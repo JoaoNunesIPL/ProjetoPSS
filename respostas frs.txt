@@ -1,0 +1,40 @@
+pergunta 1	- É uma organização que permite a ligação de indivíduos e empresas à Internet.
+
+
+pergunta 2 	- cresce sem afetar os utilizadores atuais
+		- adequada para dispositivos modulares que permitem a expansão
+
+
+pergunta 3 	- NVRAM
+
+pergunta 4 	- É encapsulado numa frame da camada 2.
+
+pergunta 5 	- Broadcast
+
+pergunta 6	- Eles permitem conectividade full-duplex.
+
+pergunta 7 	- O cabeçalho IPv6 é mais simples que o cabeçalho IPv4, o que melhora o processamento dos pacotes.
+
+pergunta 8	- o endereço lógico da interface do router na mesma rede que o host
+
+pergunta 9	- 255.255.255.224
+
+pergunta 10	- Next Header~
+
+pergunta 11 	- bem instalado no host
+
+
+pergunta 12 	- O encaminhamento estático geralmente usa menos largura de banda de rede e menos processamento do que o encaminhamento dinâmico. 
+	rota é conhecida
+	é seguro
+
+pergunta 13	- Rota backup
+
+
+pergunta 17	- dhcprequest dhcpdiscover
+
+
+
+
+
+pergunta 14	- A rota por omissão
