@@ -7,7 +7,7 @@
       //$logins = json_decode(file_get_contents('./data/logins.json'), true);
       $logins = array(
         'dccd96c256bc7dd39bae41a405f25e43' => 'dccd96c256bc7dd39bae41a405f25e43', 
-        'c6cc8094c2dc07b700ffcc36d64e2138' => 'c6cc8094c2dc07b700ffcc36d64e2138',
+        'c6cc8094c2dc07b700ffcc36d64e2138' => 'd3ce9efea6244baa7bf718f12dd0c331',
         'a7ce0692519347d641e6834848b08a38' => 'a7ce0692519347d641e6834848b08a38'
       );
 

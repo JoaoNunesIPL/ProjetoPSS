@@ -8,7 +8,7 @@ def play_sound(file):
     pygame.time.wait(int(my_sound.get_length() * 1000))
 
 def env_img():
-    url= "http://localhost/API/upload.php"
+    url= "https://bee-holder.tk/API/upload.php"
     files = {'imagem': open(t, 'rb')}
 
     r = requests.post(url, files=files)
@@ -22,7 +22,7 @@ try:
         t = time.strftime("./db/%d-%m-%Y_%H+%M+%S.jpg", named_tuple)
         print(t)
 
-        r=requests.get("http://localhost/API/api.php?nome=MSS")
+        r=requests.get("https://bee-holder.tk/API/api.php?nome=MSS")
         
         if r.status_code == 200:
             if float(r.text) != 0:

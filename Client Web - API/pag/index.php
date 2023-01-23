@@ -8,6 +8,7 @@
 ?>
 
 <!DOCTYPE html>
+<meta http-equiv="refresh" content="2" <!--- refresh auto--->
 <html>
     <head>
         <style>
