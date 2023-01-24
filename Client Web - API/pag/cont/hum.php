@@ -58,7 +58,7 @@
         <p>
             <?php
                 //echo (nl2br(file_get_contents("../../db/TSS\log.txt")));
-                $lines = file("../../db/HSH\log.txt");
+                $lines = file("../../db/HSH/log.txt");
                 $size = sizeof($lines);
 
                 echo (nl2br($lines[$size-1]));

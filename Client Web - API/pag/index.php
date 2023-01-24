@@ -36,7 +36,7 @@
     <nav>
         <div class="ini">
             <h1>Pagina inicial</h1>
-            <a href="./index.php">
+            <a href="../index.html">
                 <button type="submit">
                     <img src="../img/bee.jpg" alt="buttonpng" width="150" height="150" />
                 </button>
